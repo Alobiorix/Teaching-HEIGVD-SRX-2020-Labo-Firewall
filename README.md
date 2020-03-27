@@ -255,7 +255,7 @@ ping 192.168.200.3
 
 **LIVRABLE : capture d'écran de votre tentative de ping.**  
 
-![GitHub image-20200327222018134](\images\image-20200327222018134.png)
+![GitHub image-20200327222018134](/images/image-20200327222018134.png)
 
 ---
 
@@ -312,7 +312,7 @@ ping 192.168.100.3
 
 **LIVRABLE : capture d'écran de votre nouvelle tentative de ping.**
 
-![GitHub image-20200327222907729](\images\image-20200327222907729.png)
+![GitHub image-20200327222907729](/images/image-20200327222907729.png)
 
 ---
 
@@ -328,7 +328,7 @@ ping 8.8.8.8
 
 **LIVRABLE : capture d'écran de votre ping vers l'Internet.**
 
-![GitHub image-20200327223507918](\images\image-20200327223507918.png)
+![GitHub image-20200327223507918](/images/image-20200327223507918.png)
 
 ---
 
