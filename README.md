@@ -332,7 +332,7 @@ ping 8.8.8.8
 
 ---
 
-### Configuration réseau du firewall
+### Configuration réseau du firewallti
 
 Dans un terminal de votre firewall, vous pouvez utiliser l'éditeur `nano` déjà installé pour éditer le fichier `/etc/ssh/sshd_config`.
 
