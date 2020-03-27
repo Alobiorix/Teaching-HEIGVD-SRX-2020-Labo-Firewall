@@ -137,23 +137,28 @@ _Lors de la définition d'une zone, spécifier l'adresse du sous-réseau IP avec
 |                   |                        |             |          |          |        |
 |        LAN        |          WAN           |    ICMP     |   ALL    |   ALL    | Accept |
 |        LAN        |          DMZ           |    ICMP     |   ALL    |   ALL    | Accept |
+|        DMZ        |          LAN           |    ICMP     |   ALL    |   ALL    | Accept |
+|        WAN        |          LAN           | ICMP(Reply) |   ALL    |   ALL    | Accept |
 |                   |                        |             |          |          |        |
+|        LAN        |          WAN           |     TCP     |   ALL    |    80    | Accept |
+|        LAN        |          WAN           |     TCP     |   ALL    |   8080   | Accept |
+|        WAN        |          LAN           |     TCP     |    80    |   ALL    | Accept |
+|        WAN        |          LAN           |     TCP     |   8080   |   ALL    | Accept |
 |                   |                        |             |          |          |        |
+|        LAN        |          WAN           |     TCP     |   ALL    |   443    | Accept |
+|        WAN        |          LAN           |     TCP     |   443    |   ALL    | Accept |
 |                   |                        |             |          |          |        |
+|        LAN        |          DMZ           |     TCP     |   ALL    |    80    | Accept |
+|        DMZ        |          LAN           |     TCP     |    80    |   ALL    | Accept |
+|        WAN        |          DMZ           |     TCP     |   ALL    |    80    | Accept |
+|        DMZ        |          WAN           |     TCP     |    80    |   ALL    | Accept |
 |                   |                        |             |          |          |        |
+|   Client_in_LAN   |          DMZ           |     TCP     |   ALL    |    22    | Accept |
+|        DMZ        |     Client_in_LAN      |     TCP     |    22    |   ALL    | Accept |
+|   Client_in_LAN   |     192.168.100.2      |     TCP     |   ALL    |    22    | Accept |
+|   192.168.100.2   |     Client_in_LAN      |     TCP     |    22    |   ALL    | Accept |
 |                   |                        |             |          |          |        |
-|                   |                        |             |          |          |        |
-|                   |                        |             |          |          |        |
-|                   |                        |             |          |          |        |
-|                   |                        |             |          |          |        |
-|                   |                        |             |          |          |        |
-|                   |                        |             |          |          |        |
-|                   |                        |             |          |          |        |
-|                   |                        |             |          |          |        |
-|                   |                        |             |          |          |        |
-|                   |                        |             |          |          |        |
-|                   |                        |             |          |          |        |
-|                   |                        |             |          |          |        |
+|        ALL        |          ALL           |     ALL     |   ALL    |   ALL    |  Drop  |
 
 ---
 
