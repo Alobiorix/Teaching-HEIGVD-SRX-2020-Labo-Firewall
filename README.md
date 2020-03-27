@@ -123,15 +123,37 @@ _Lors de la définition d'une zone, spécifier l'adresse du sous-réseau IP avec
 
 **LIVRABLE : Remplir le tableau**
 
-| Adresse IP source | Adresse IP destination |    Type    | Port src | Port dst | Action |
-| :---:             | :---:                  | :---------:| :------: | :------: | :----: |
-|                   |                        |            |          |          |        |
-| 192.168.100.0/24  | 192.168.200.0/24       | ICMP       |    *     |    *     | Accept |
-| 192.168.200.0/24  | 192.168.100.0/24       | ICMP       |    *     |    *     | Accept |
-| 192.168.100.0/24  | WAN                    | ICMP       |    *     |    *     | Accept |
-| WAN               | 192.168.100.0/24       | ICMP(reply)|    *     |    *     | Accept |
-|                   |                        |            |          |          |        |
-|                   |                        |            |          |          |        |
+| Adresse IP source | Adresse IP destination |    Type     | Port src | Port dst | Action |
+| :---------------: | :--------------------: | :---------: | :------: | :------: | :----: |
+| 192.168.100.0/24  |    192.168.200.0/24    |    ICMP     |    *     |    *     | Accept |
+| 192.168.200.0/24  |    192.168.100.0/24    |    ICMP     |    *     |    *     | Accept |
+| 192.168.100.0/24  |          WAN           |    ICMP     |    *     |    *     | Accept |
+|        WAN        |    192.168.100.0/24    | ICMP(reply) |    *     |    *     | Accept |
+|                   |                        |             |          |          |        |
+|        LAN        |          WAN           |     UDP     |   ALL    |    53    | Accept |
+|        LAN        |          WAN           |     TCP     |   ALL    |    53    | Accept |
+|        WAN        |          LAN           |     UDP     |    53    |   ALL    | Accept |
+|        WAN        |          LAN           |     TCP     |    53    |   ALL    | Accept |
+|                   |                        |             |          |          |        |
+|        LAN        |          WAN           |    ICMP     |   ALL    |   ALL    | Accept |
+|        LAN        |          DMZ           |    ICMP     |   ALL    |   ALL    | Accept |
+|                   |                        |             |          |          |        |
+|                   |                        |             |          |          |        |
+|                   |                        |             |          |          |        |
+|                   |                        |             |          |          |        |
+|                   |                        |             |          |          |        |
+|                   |                        |             |          |          |        |
+|                   |                        |             |          |          |        |
+|                   |                        |             |          |          |        |
+|                   |                        |             |          |          |        |
+|                   |                        |             |          |          |        |
+|                   |                        |             |          |          |        |
+|                   |                        |             |          |          |        |
+|                   |                        |             |          |          |        |
+|                   |                        |             |          |          |        |
+|                   |                        |             |          |          |        |
+|                   |                        |             |          |          |        |
+|                   |                        |             |          |          |        |
 
 ---
 
@@ -353,7 +375,7 @@ Chaque règle doit être tapée sur une ligne séparée. Référez-vous à la th
 Sauvegarder la configuration du firewall dans le fichier `iptables.conf` :
 
 ```bash
-iptables-save > iptables.conf
+ iptables-save > iptables.conf
 ```
 
 Récuperer la config sauvegardée :
@@ -403,7 +425,7 @@ LIVRABLE : Commandes iptables
 
 ```bash
 ping 8.8.8.8
-``` 	            
+```
 Faire une capture du ping.
 
 ---
@@ -468,7 +490,6 @@ LIVRABLE : Commandes iptables
   <li>Tester en réitérant la commande ping sur le serveur de test (Google ou autre) : 
   </li>                                  
 </ol>
-
 ---
 
 **LIVRABLE : capture d'écran de votre ping.**
@@ -479,7 +500,6 @@ LIVRABLE : Commandes iptables
   <li>Remarques (sur le message du premier ping)? 
   </li>                                  
 </ol>
-
 ---
 **Réponse**
 
@@ -523,7 +543,6 @@ LIVRABLE : Commandes iptables
   <li>Tester l’accès à ce serveur depuis le LAN utilisant utilisant wget (ne pas oublier les captures d'écran). 
   </li>                                  
 </ol>
-
 ---
 
 **LIVRABLE : capture d'écran.**
@@ -564,7 +583,6 @@ ssh root@192.168.200.3 (password : celui que vous avez configuré)
   <li>Expliquer l'utilité de **ssh** sur un serveur. 
   </li>                                  
 </ol>
-
 ---
 **Réponse**
 
@@ -593,7 +611,6 @@ A présent, vous devriez avoir le matériel nécessaire afin de reproduire la ta
   <li>Insérer la capture d’écran avec toutes vos règles iptables
   </li>                                  
 </ol>
-
 ---
 
 **LIVRABLE : capture d'écran avec toutes vos règles.**
