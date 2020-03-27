@@ -255,7 +255,7 @@ ping 192.168.200.3
 
 **LIVRABLE : capture d'écran de votre tentative de ping.**  
 
-![image-20200327222018134](C:\Users\R.Diluckshan\AppData\Roaming\Typora\typora-user-images\image-20200327222018134.png)
+![image-20200327222018134](C:\Users\R.Diluckshan\Documents\SRX\SRX_Labo\Teaching-HEIGVD-SRX-2020-Labo-Firewall\images\image-20200327222018134.png)
 
 ---
 
@@ -312,7 +312,7 @@ ping 192.168.100.3
 
 **LIVRABLE : capture d'écran de votre nouvelle tentative de ping.**
 
-![image-20200327222907729](C:\Users\R.Diluckshan\AppData\Roaming\Typora\typora-user-images\image-20200327222907729.png)
+![image-20200327222907729](C:\Users\R.Diluckshan\Documents\SRX\SRX_Labo\Teaching-HEIGVD-SRX-2020-Labo-Firewall\images\image-20200327222907729.png)
 
 ---
 
@@ -328,7 +328,7 @@ ping 8.8.8.8
 
 **LIVRABLE : capture d'écran de votre ping vers l'Internet.**
 
-![image-20200327223507918](C:\Users\R.Diluckshan\AppData\Roaming\Typora\typora-user-images\image-20200327223507918.png)
+![image-20200327223507918](C:\Users\R.Diluckshan\Documents\SRX\SRX_Labo\Teaching-HEIGVD-SRX-2020-Labo-Firewall\images\image-20200327223507918.png)
 
 ---
 
