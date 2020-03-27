@@ -123,15 +123,15 @@ _Lors de la définition d'une zone, spécifier l'adresse du sous-réseau IP avec
 
 **LIVRABLE : Remplir le tableau**
 
-| Adresse IP source | Adresse IP destination | Type | Port src | Port dst | Action |
-| :---:             | :---:                  | :---:| :------: | :------: | :----: |
-|                   |                        |      |          |          |        |
-|                   |                        |      |          |          |        |
-|                   |                        |      |          |          |        |
-|                   |                        |      |          |          |        |
-|                   |                        |      |          |          |        |
-|                   |                        |      |          |          |        |
-|                   |                        |      |          |          |        |
+| Adresse IP source | Adresse IP destination |    Type    | Port src | Port dst | Action |
+| :---:             | :---:                  | :---------:| :------: | :------: | :----: |
+|                   |                        |            |          |          |        |
+| 192.168.100.0/24  | 192.168.200.0/24       | ICMP       |    *     |    *     | Accept |
+| 192.168.200.0/24  | 192.168.100.0/24       | ICMP       |    *     |    *     | Accept |
+| 192.168.100.0/24  | WAN                    | ICMP       |    *     |    *     | Accept |
+| WAN               | 192.168.100.0/24       | ICMP(reply)|    *     |    *     | Accept |
+|                   |                        |            |          |          |        |
+|                   |                        |            |          |          |        |
 
 ---
 
