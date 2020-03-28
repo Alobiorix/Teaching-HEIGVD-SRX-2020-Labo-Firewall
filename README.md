@@ -328,7 +328,7 @@ ping 8.8.8.8
 
 **LIVRABLE : capture d'écran de votre ping vers l'Internet.**
 
-![GitHub image-20200327223507918](/images/image-20200327223507918.png)
+![image-20200328130217828](/images/image-20200328130217828.png)
 
 ---
 
@@ -424,6 +424,27 @@ Commandes iptables :
 
 ```bash
 LIVRABLE : Commandes iptables
+
+Ping de LAN à DMZ : 
+Pour Echo : 
+iptables -A FORWARD -p icmp -s 192.168.100.0/24 --icmp-type 8 -d 192.168.200.0/24 -j ACCEPT
+Pour Echo Reply :
+iptables -A FORWARD -p icmp -s 192.168.200.0/24 --icmp-type 0 -d 192.168.100.0/24 -j ACCEPT
+
+Ping de LAN à WAN : 
+Pour Echo : 
+iptables -A FORWARD -p icmp -s 192.168.100.0/24 -o eth0 --icmp-type 8 -j ACCEPT
+Pour Echo Reply:
+iptables -A FORWARD -p icmp -i eth0 --icmp-type 0 -d 192.168.100.0/24 -j ACCEPT
+
+Ping de DMZ à LAN : 
+Pour Echo : 
+iptables -A FORWARD -p icmp -s 192.168.200.0/24 --icmp-type 8 -d 192.168.100.0/24 -j ACCEPT
+
+Pour Echo Reply :
+iptables -A FORWARD -p icmp -s 192.168.100.0/24 --icmp-type 0 -d 192.168.200.0/24 -j ACCEPT
+
+
 ```
 ---
 
@@ -442,6 +463,8 @@ Faire une capture du ping.
 ---
 **LIVRABLE : capture d'écran de votre ping vers l'Internet.**
 
+![image-20200328160809086](/images/image-20200328160809086.png)
+
 ---
 
 <ol type="a" start="3">
@@ -451,9 +474,9 @@ Faire une capture du ping.
 
 
 | De Client\_in\_LAN à | OK/KO | Commentaires et explications |
-| :---                 | :---: | :---                         |
-| Interface DMZ du FW  |       |                              |
-| Interface LAN du FW  |       |                              |
+| :------------------- | :---: | :--------------------------- |
+| Interface DMZ du FW  |  KO   |                              |
+| Interface LAN du FW  |  OK   |                              |
 | Client LAN           |       |                              |
 | Serveur WAN          |       |                              |
 
@@ -535,6 +558,9 @@ Commandes iptables :
 
 ```bash
 LIVRABLE : Commandes iptables
+
+
+
 ```
 
 ---
