@@ -125,10 +125,6 @@ _Lors de la définition d'une zone, spécifier l'adresse du sous-réseau IP avec
 
 | Adresse IP source | Adresse IP destination |    Type     | Port src | Port dst | Action |
 | :---------------: | :--------------------: | :---------: | :------: | :------: | :----: |
-| 192.168.100.0/24  |    192.168.200.0/24    |    ICMP     |    *     |    *     | Accept |
-| 192.168.200.0/24  |    192.168.100.0/24    |    ICMP     |    *     |    *     | Accept |
-| 192.168.100.0/24  |          WAN           |    ICMP     |    *     |    *     | Accept |
-|        WAN        |    192.168.100.0/24    | ICMP(reply) |    *     |    *     | Accept |
 |                   |                        |             |          |          |        |
 |        LAN        |          WAN           |     UDP     |   ALL    |    53    | Accept |
 |        LAN        |          WAN           |     TCP     |   ALL    |    53    | Accept |
