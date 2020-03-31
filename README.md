@@ -654,7 +654,7 @@ ssh root@192.168.200.3 (password : celui que vous avez configuré)
 ---
 
 **LIVRABLE : capture d'écran de votre connexion ssh.**
-
+![ssh_lan_to_dmz](/images/ssh_lan_to_dmz.jpg)
 ---
 
 <ol type="a" start="9">
