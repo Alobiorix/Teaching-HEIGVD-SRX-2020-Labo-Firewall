@@ -641,6 +641,13 @@ Commandes iptables :
 
 ```bash
 LIVRABLE : Commandes iptables
+ssh LAN à DMZ:
+iptables -A FORWARD -p tcp -s 192.168.100.3 --dport 22 -d 192.168.200.0/24 -j ACCEPT
+iptables -A FORWARD -p tcp -s 192.168.200.0/24 --sport 22 -d 192.168.100.3 -j ACCEPT
+
+ssh LAN à FIREWALL:
+iptables -A INPUT -p tcp -s 192.168.100.3 --dport 22 -j ACCEPT
+iptables -A OUTPUT -p tcp -d 192.168.100.3 --sport 22 -j ACCEPT
 ```
 
 ---
