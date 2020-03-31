@@ -575,8 +575,20 @@ Commandes iptables :
 
 ```bash
 LIVRABLE : Commandes iptables
+Connexion HTTP LAN à WAN : 
+iptables -A FORWARD -p tcp -s 192.168.100.0/24 --dport 80 -o eth0 -j ACCEPT
+iptables -A FORWARD -p tcp -s 192.168.100.0/24 --dport 8080 -o eth0 -j ACCEPT
+
+Connexion HTTP WAN à LAN : 
+iptables -A FORWARD -p tcp -i eth0 --sport 8080 -d 192.168.100.0/24 -j ACCEPT
+iptables -A FORWARD -p tcp -i eth0 --sport 443 -d 192.168.100.0/24 -j ACCEPT
 
 
+Connexion HTTPS LAN à WAN :
+iptables -A FORWARD -p tcp -i eth0 --sport 80 -d 192.168.100.0/24 -j ACCEPT
+
+Connexion HTTPS WAN à LAN :
+iptables -A FORWARD -p tcp -s 192.168.100.0/24 -o eth0 --dport 443 -j ACCEPT
 
 ```
 
@@ -590,6 +602,20 @@ Commandes iptables :
 
 ```bash
 LIVRABLE : Commandes iptables
+LAN à DMZ :
+iptables -A FORWARD -p tcp -s 192.168.100.0/24 -d 192.168.200.0/24 --dport 80 -j ACCEPT
+
+DMZ à LAN :
+iptables -A FORWARD -p tcp -s 192.168.200.0/24 --sport 80 -d 192.168.100.0/24 -j ACCEPT
+
+WAN à DMZ :
+iptables -A FORWARD -p tcp -i eth0 -d 192.168.100.0/24 --dport 80 -j ACCEPT
+
+DMZ à WAN : 
+iptables -A FORWARD -p tcp -s 192.168.100.0/24 --sport 80 -o eth0  -j ACCEPT
+
+
+
 ```
 ---
 
@@ -600,6 +626,8 @@ LIVRABLE : Commandes iptables
 ---
 
 **LIVRABLE : capture d'écran.**
+
+![image-20200331161732945](/images/image-20200331161732945.png)
 
 ---
 
