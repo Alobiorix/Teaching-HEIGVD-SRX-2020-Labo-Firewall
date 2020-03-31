@@ -673,7 +673,7 @@ ssh root@192.168.200.3 (password : celui que vous avez configuré)
 
 **LIVRABLE : Votre réponse ici...**
 
-Cela permet de facilement manager un serveur à distance. Il n'est pas toujours facile voire possible d'avoir un accès physique aux serveurs, on préfére donc souvent les manager à distance. Il est également fréquent qu'une même personne doive s'occuper de plusieurs serveurs en même temps, il est donc pratique de pourvoir envoyer des commandes aux serveurs juste en aillant quelques consoles ouvertes sur un même ordinateur.
+Cela permet de facilement manager un serveur à distance avec une connexion sécurisée. Il n'est pas toujours facile voire possible d'avoir un accès physique aux serveurs, on préfère donc souvent les manager à distance. Il est également fréquent qu'une même personne doive s'occuper de plusieurs serveurs en même temps, il est donc pratique de pourvoir envoyer des commandes aux serveurs juste en aillant quelques consoles ouvertes sur un même ordinateur.
 
 ---
 
@@ -689,7 +689,6 @@ Cela permet de facilement manager un serveur à distance. Il n'est pas toujours 
 **LIVRABLE : Votre réponse ici...**
 
 Il faut faire particulièrement attention à qui on donne droit à l'accès, seulement à un administrateur . Il faut définir 2 règles , un aller et un de retour pour les paquets  à une adresse ip unique d'admin et son port de SSH.
----
 
 ## Règles finales iptables
 
