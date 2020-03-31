@@ -702,5 +702,5 @@ A présent, vous devriez avoir le matériel nécessaire afin de reproduire la ta
 ---
 
 **LIVRABLE : capture d'écran avec toutes vos règles.**
-
+![iptables](/images/iptables.jpg)
 ---
