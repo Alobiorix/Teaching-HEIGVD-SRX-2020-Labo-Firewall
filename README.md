@@ -672,6 +672,7 @@ ssh root@192.168.200.3 (password : celui que vous avez configuré)
 **Réponse**
 
 **LIVRABLE : Votre réponse ici...**
+Cela permet de facilement manager un serveur à distance. Il n'est pas toujours facile voire possible d'avoir un accès physique aux serveurs, on préfére donc souvent les manager à distance. Il est également fréquent qu'une même personne doive s'occuper de plusieurs serveurs en même temps, il est donc pratique de pourvoir envoyer des commandes aux serveurs juste en aillant quelques consoles ouvertes sur un même ordinateur.
 
 ---
 
