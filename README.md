@@ -476,18 +476,18 @@ Faire une capture du ping.
 
 | De Client\_in\_LAN à | OK/KO | Commentaires et explications                                 |
 | :------------------- | :---: | :----------------------------------------------------------- |
-| Interface DMZ du FW  |  KO   | Les interfaces DMZ du firewall ne sont pas atteignables car nous avons autorisé que les paquets FORWARD (les paquets traversant le firewall )et non les INPUT et OUTPUT du firewall (entrées et sorties de firewall) . |
-| Interface LAN du FW  |  KO   | Les interfaces LAN du firewall ne sont pas atteignables car nous avons autorisé que les paquets FORWARD (les paquets traversant le firewall )et non les INPUT et OUTPUT du firewall (entrées et sorties de firewall) . |
-| Client LAN           |  OK   |                                                              |
-| Serveur WAN          |  OK   |                                                              |
+| Interface DMZ du FW  |  KO   | Les interfaces DMZ du firewall ne sont pas atteignables car nous avons autorisé que les paquets FORWARD (les paquets traversant le firewall )et non les INPUT et OUTPUT du firewall (echo reply du Firewall) . |
+| Interface LAN du FW  |  KO   | Les interfaces LAN du firewall ne sont pas atteignables car nous avons autorisé que les paquets FORWARD (les paquets traversant le firewall )et non les INPUT et OUTPUT du firewall (echo reply du Firewall) . |
+| Client LAN           |  OK   | Client LAN pingable comme demandé                            |
+| Serveur WAN          |  OK   | WAN pingable comme demandé                                   |
 
 
-| De Server\_in\_DMZ à | OK/KO | Commentaires et explications |
-| :---                 | :---: | :---                         |
-| Interface DMZ du FW  |       |                              |
-| Interface LAN du FW  |       |                              |
-| Serveur DMZ          |       |                              |
-| Serveur WAN          |       |                              |
+| De Server\_in\_DMZ à | OK/KO | Commentaires et explications                                 |
+| :------------------- | :---: | :----------------------------------------------------------- |
+| Interface DMZ du FW  |  KO   | Les interfaces DMZ du firewall ne sont pas atteignables car nous avons autorisé que les paquets FORWARD (les paquets traversant le firewall )et non les INPUT et OUTPUT du firewall (echo reply du Firewall) . |
+| Interface LAN du FW  |  KO   | Les interfaces LAN du firewall ne sont pas atteignables car nous avons autorisé que les paquets FORWARD (les paquets traversant le firewall )et non les INPUT et OUTPUT du firewall (echo reply du Firewall) . |
+| Serveur DMZ          |  OK   | DMZ pingable comme demandé                                   |
+| Serveur WAN          |  KO   | Il n'était pas demandé d'implémenter de pinger WAN.          |
 
 
 ## Règles pour le protocole DNS
