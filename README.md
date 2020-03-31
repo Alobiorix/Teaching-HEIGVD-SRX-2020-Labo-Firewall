@@ -576,20 +576,16 @@ Commandes iptables :
 ```bash
 LIVRABLE : Commandes iptables
 Connexion HTTP LAN à WAN : 
-iptables -A FORWARD -p tcp -s 192.168.100.0/24 --dport 80 -o eth0 -j ACCEPT
-iptables -A FORWARD -p tcp -s 192.168.100.0/24 --dport 8080 -o eth0 -j ACCEPT
+iptables -A FORWARD -p tcp -s 192.168.100.0/24 -m multiport --dports 80,8080 -o eth0 -j ACCEPT
 
 Connexion HTTP WAN à LAN : 
-iptables -A FORWARD -p tcp -i eth0 --sport 8080 -d 192.168.100.0/24 -j ACCEPT
-iptables -A FORWARD -p tcp -i eth0 --sport 443 -d 192.168.100.0/24 -j ACCEPT
-
+iptables -A FORWARD -p tcp -i eth0 -m multiport --sports 80,8080 -d 192.168.100.0/24 -j ACCEPT
 
 Connexion HTTPS LAN à WAN :
-iptables -A FORWARD -p tcp -i eth0 --sport 80 -d 192.168.100.0/24 -j ACCEPT
+iptables -A FORWARD -p tcp -i eth0 --sport 443 -d 192.168.100.0/24 -j ACCEPT
 
 Connexion HTTPS WAN à LAN :
 iptables -A FORWARD -p tcp -s 192.168.100.0/24 -o eth0 --dport 443 -j ACCEPT
-
 ```
 
 ---
