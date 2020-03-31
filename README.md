@@ -688,7 +688,7 @@ Cela permet de facilement manager un serveur à distance. Il n'est pas toujours 
 
 **LIVRABLE : Votre réponse ici...**
 
-
+Il faut faire particulièrement attention à qui on donne droit à l'accès, seulement à un administrateur . Il faut définir 2 règles , un aller et un de retour pour les paquets  à une adresse ip unique d'admin et son port de SSH.
 ---
 
 ## Règles finales iptables
