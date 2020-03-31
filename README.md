@@ -521,12 +521,12 @@ Commandes iptables :
 LIVRABLE : Commandes iptables
 
 LAN à WAN :
-iptables -A FORWARD -p tcp -s 192.168.100.0/24 -o eth0 --dport 53 -j ACCEPT
-iptables -A FORWARD -p udp -s 192.168.100.0/24 -o eth0 --dport 53 -j ACCEPT
+iptables -A FORWARD -p tcp -m conntrack --ctstate NEW -s 192.168.100.0/24 -o eth0 --dport 53 -j ACCEPT
+iptables -A FORWARD -p udp -m conntrack --ctstate NEW -s 192.168.100.0/24 -o eth0 --dport 53 -j ACCEPT
 
 WAN à LAN :
-iptables -A FORWARD -p tcp -i eth0 --sport 53 -d 192.168.100.0/24 -j ACCEPT
-iptables -A FORWARD -p udp -i eth0 --sport 53 -d 192.168.100.0/24 -j ACCEPT
+iptables -A FORWARD -p tcp -m conntrack --ctstate RELATED,ESTABLISHED -i eth0 --sport 53 -d 192.168.100.0/24 -j ACCEPT
+iptables -A FORWARD -p udp -m conntrack --ctstate RELATED,ESTABLISHED -i eth0 --sport 53 -d 192.168.100.0/24 -j ACCEPT
 ```
 
 ---
