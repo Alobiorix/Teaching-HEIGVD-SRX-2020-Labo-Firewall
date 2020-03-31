@@ -440,6 +440,11 @@ iptables -A FORWARD -p icmp -s 192.168.200.0/24 --icmp-type 8 -d 192.168.100.0/2
 Pour Echo Reply :
 iptables -A FORWARD -p icmp -s 192.168.100.0/24 --icmp-type 0 -d 192.168.200.0/24 -j ACCEPT
 
+On bloque tous les paquets non nécesaires : 
+iptables -P INPUT DROP
+iptables -P FORWARD DROP
+iptables -P OUTPUT DROP
+
 
 ```
 ---
@@ -469,12 +474,12 @@ Faire une capture du ping.
 </ol>
 
 
-| De Client\_in\_LAN à | OK/KO | Commentaires et explications |
-| :------------------- | :---: | :--------------------------- |
-| Interface DMZ du FW  |  KO   |                              |
-| Interface LAN du FW  |  OK   |                              |
-| Client LAN           |       |                              |
-| Serveur WAN          |       |                              |
+| De Client\_in\_LAN à | OK/KO | Commentaires et explications                                 |
+| :------------------- | :---: | :----------------------------------------------------------- |
+| Interface DMZ du FW  |  KO   | Les interfaces DMZ du firewall ne sont pas atteignables car nous avons autorisé que les paquets FORWARD (les paquets traversant le firewall )et non les INPUT et OUTPUT du firewall (entrées et sorties de firewall) . |
+| Interface LAN du FW  |  KO   | Les interfaces LAN du firewall ne sont pas atteignables car nous avons autorisé que les paquets FORWARD (les paquets traversant le firewall )et non les INPUT et OUTPUT du firewall (entrées et sorties de firewall) . |
+| Client LAN           |  OK   |                                                              |
+| Serveur WAN          |  OK   |                                                              |
 
 
 | De Server\_in\_DMZ à | OK/KO | Commentaires et explications |
