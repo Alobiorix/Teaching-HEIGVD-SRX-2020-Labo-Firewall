@@ -507,6 +507,8 @@ ping www.google.com
 
 **LIVRABLE : capture d'écran de votre ping.**
 
+![image-20200331124240916](/images/image-20200331124240916.png)
+
 ---
 
 * Créer et appliquer la règle adéquate pour que la **condition 1 du cahier des charges** soit respectée.
@@ -517,6 +519,14 @@ Commandes iptables :
 
 ```bash
 LIVRABLE : Commandes iptables
+
+LAN à WAN :
+iptables -A FORWARD -p tcp -s 192.168.100.0/24 -o eth0 --dport 53 -j ACCEPT
+iptables -A FORWARD -p udp -s 192.168.100.0/24 -o eth0 --dport 53 -j ACCEPT
+
+WAN à LAN :
+iptables -A FORWARD -p tcp -i eth0 --sport 53 -d 192.168.100.0/24 -j ACCEPT
+iptables -A FORWARD -p udp -i eth0 --sport 53 -d 192.168.100.0/24 -j ACCEPT
 ```
 
 ---
@@ -529,6 +539,10 @@ LIVRABLE : Commandes iptables
 
 **LIVRABLE : capture d'écran de votre ping.**
 
+
+
+![image-20200331145331592](/images/image-20200331145331592.png)
+
 ---
 
 <ol type="a" start="6">
@@ -539,6 +553,8 @@ LIVRABLE : Commandes iptables
 **Réponse**
 
 **LIVRABLE : Votre réponse ici...**
+
+Il affiche une message d'erreur " Temporary failure in name resolution ", car notre client n'obtient pas adresse IP de www.google.com  depuis la DNS servers.
 
 ---
 
